@@ -21,7 +21,34 @@ export default new Router({
     {
       path: '/team',
       name: 'Team',
-      component: Team
+      component: Team,
+      children: [
+        {
+          path: 'match',
+          name: 'TeamMatch',
+          component: Team.TeamMatch
+        },
+        {
+          path: 'member',
+          name: 'TeamMember',
+          component: Team.TeamMember
+        },
+        {
+          path: 'record',
+          name: 'TeamRecord',
+          component: Team.TeamRecord
+        },
+        {
+          path: 'recruit',
+          name: 'TeamRecruit',
+          component: Team.TeamRecruit
+        }
+      ]
     }
+    // {
+    //   path: '/team/match',
+    //   name: 'TeamMatch',
+    //   component: TeamMatch
+    // }
   ]
 })

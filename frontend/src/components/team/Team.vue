@@ -1,21 +1,33 @@
 <template>
   <div class="team">
     <ul>
-      <li><a href="/team/match">경기</a></li>
-      <li><a href="/team/member">선수</a></li>
-      <li><a href="/team/history">지난날</a></li>
-      <li><a href="/team/find">찾기</a></li>
+      <li><router-link to="/team/match">경기</router-link></li>
+      <li><router-link to="/team/member">선수</router-link></li>
+      <li><router-link to="/team/record">지난날</router-link></li>
+      <li><router-link to="/team/recruit">찾기</router-link></li>
     </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import TeamMatch from '@/components/team/TeamMatch'
+import TeamMember from '@/components/team/TeamMember'
+import TeamRecord from '@/components/team/TeamRecord'
+import TeamRecruit from '@/components/team/TeamRecruit'
+
 export default {
   name: 'Team',
   data () {
     return {
       msg: 'this is Team'
     }
+  },
+  components: {
+    TeamMatch,
+    TeamMember,
+    TeamRecord,
+    TeamRecruit
   }
 }
 </script>
